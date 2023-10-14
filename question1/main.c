@@ -26,7 +26,7 @@ int main ()
 {
 	while(1)
 	{
-		how_big();
+		
 		init_board();
 		if(numb_players()==1)
 		{
