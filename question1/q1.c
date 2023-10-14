@@ -142,10 +142,9 @@ int game_done()
 			{
 				return 0;
 			}
-                        else {return 1;}
 		}
 	}
-	
+        return 1;
 }
 
 int square_valid (int square)
