@@ -19,36 +19,6 @@ int comp_find_ss (void);
 char board[5][5];
 int Player1, Player2, Computer, players;
 
-int main ()
-{
-	while(1)
-	{
-		init_board();
-		if(numb_players()==1)
-		{
-			players=1;
-			comp_play();
-		}
-		else
-		{
-			players=2;
-			two_player();
-		}
-                if(game_done())
-                {
-                        printf("Game over\n");
-			winner();
-			
-			if (!play_again())
-                	{
-                        	break;
-                	}
-
-                }
-	} 	
-	return 0;
-}
-
 void init_board()
 {
 	for (int row = 0; row < 5; row++)
@@ -162,17 +132,13 @@ int square_valid (int square)
 	}
 	else 
 	{
-		printf("Invalid space\n");
-		
 		return 0;
 	} 
   }
   else
   {
-	printf("Invalid\n");
-	
 	return 0;	
-  }	
+  }
 }
 
 void two_player()
@@ -182,7 +148,7 @@ void two_player()
 		player_move(1);
 		if(game_done())
 		{ 
-			break;
+			return;
 		}
 		player_move(2);
 	}while (!game_done());
@@ -204,7 +170,7 @@ void player_move(int player)
 	do
 	{
 		scanf("%d", &square);
-	}while(!square_valid(square));
+	}while (!square_valid(square));
 
 	row = (square-1)/5;
 	col = (square-1)%5;
