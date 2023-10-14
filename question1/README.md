@@ -18,4 +18,17 @@ Please answer the bonus parts of this question in the question2 folder.
 
 Compilation Steps:
 
+CC = gcc
+CFLAGS = -I.
+
+make: main.o sos.o  
+	$(CC) $(CFLAGS) -o main.out main.o sos.o howbig.o
+sos.o: sos.c sos.h
+	$(CC) $(CFLAGS) -c sos.c
+main.o: main.c sos.h
+	$(CC) $(CFLAGS) -c main.c
+
+clean:
+	rm -f *.o *.out
+
 Output:
