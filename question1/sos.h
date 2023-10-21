@@ -11,10 +11,10 @@ int find_sos (int, int, char);
 void two_player (void);
 int find_square (void);
 void player_move(int);
-void comp_play(void);
-void comp_move(void);
+void computer_play(void);
+void computer_move(void);
 void winner (void);
-int comp_find_ss (void);
+int computer_find_ss (void);
 
 char board[5][5];
 int Player1, Player2, Computer, players;
@@ -307,14 +307,14 @@ void winner()
 	}
 }
 
-void comp_play()
+void computer_play()
 {
 	do
 	{
 		player_move(1);
 		if (!game_done())
 		{
-			comp_move();
+			computer_move();
 		}
 	}while(!game_done());
 
@@ -337,7 +337,7 @@ int find_square()
 	return 0;
 }
 
-void comp_move()
+void computer_move()
 {
 	
   int square;
@@ -348,9 +348,9 @@ void comp_move()
   {
         draw_board();
 	
-	if(comp_find_ss())
+	if(computer_find_ss())
 	{
-		square = comp_find_ss();
+		square = computer_find_ss();
 		symbol = 'O';
 	}
 	else
@@ -369,7 +369,7 @@ void comp_move()
 }
 
 
-int comp_find_ss()
+int computer_find_ss()
 {
 	int square;
 
