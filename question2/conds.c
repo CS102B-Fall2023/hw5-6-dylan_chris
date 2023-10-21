@@ -22,7 +22,7 @@ int game_done()
         return 1;
 }
 
-int square_valid (int square)
+int open_square (int square)
 {
    int row, col;
 
