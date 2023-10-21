@@ -76,7 +76,7 @@ int computer_find_os ()
                 for(int jj=0; jj<n; jj++)
                 {
                    square = ((ii*n) +jj)+1;
-                   if(square_valid(square))
+                   if(open_square(square))
                    {
                         if((board[ii][jj+1]=='O') && (board[ii][jj+2] == 'S'))
                         {
@@ -125,7 +125,7 @@ int computer_find_ss()
                 {
                    square = ((ii*n) +jj)+1;
 
-                   if(square_valid(square))
+                   if(open_square(square))
                    {
 
                         if((board[ii][jj+1]=='S') && (board[ii][jj-1] == 'S'))
