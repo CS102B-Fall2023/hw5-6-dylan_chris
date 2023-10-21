@@ -14,9 +14,8 @@ void player_move(int);
 void comp_play(void);
 void comp_move(void);
 void winner (void);
-int comp_find_os (void);
 int comp_find_ss (void);
-void how_big(void);
+
 
 
 char board[5][5];
