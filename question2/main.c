@@ -13,7 +13,7 @@ int main ()
                 if(numb_players()==1)
                 {
                         players=1;
-                        comp_play();
+                        computer_play();
                 }
                 else
                 {
