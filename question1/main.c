@@ -3,7 +3,7 @@
 
 void init_board (void);
 void draw_board (void);
-int numb_players (void);
+int number_players (void);
 int play_again (void);
 int square_valid (int);
 int game_done (void);
