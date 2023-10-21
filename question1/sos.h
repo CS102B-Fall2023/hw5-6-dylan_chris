@@ -14,7 +14,6 @@ void player_move(int);
 void comp_play(void);
 void comp_move(void);
 void winner (void);
-int comp_find_os (void);
 int comp_find_ss (void);
 
 char board[5][5];
@@ -348,12 +347,8 @@ void comp_move()
   do
   {
         draw_board();
-	if(comp_find_os())
-	{
-		square = comp_find_os();
-		symbol = 'S';
-	}
-	else if(comp_find_ss())
+	
+	if(comp_find_ss())
 	{
 		square = comp_find_ss();
 		symbol = 'O';
@@ -373,54 +368,6 @@ void comp_move()
    return;
 }
 
-int comp_find_os ()
-{
-	int square;
-
-	for (int ii=0; ii<5; ii++)
-	{
-		for(int jj=0; jj<5; jj++)
-		{
-		   square = ((ii*5) +jj)+1;
-		   if(square_valid(square))
-		   {
-			if((board[ii][jj+1]=='O') && (board[ii][jj+2] == 'S'))
-			{
-				return square;
-			}
-                       if((board[ii][jj-1]=='O') && (board[ii][jj-2] == 'S'))
-                        {
-                                return square;
-                        }
-			if ((board[ii+1][jj] == 'O') && (board[ii+2][jj] =='S'))
-			{
-				return square;
-			}
-                        if ((board[ii-1][jj] == 'O') && (board[ii-2][jj] =='S'))
-                        {
-                                return square;
-                        }
-			if((board[ii+1][jj+1] == 'O') && (board[ii+2][jj+2] == 'S'))
-                        {
-                                return square;
-                        }
-                        if((board[ii-1][jj-1] == 'O') && (board[ii-2][jj-2] == 'S'))
-                        {
-                                return square;
-                        }
-                        if((board[ii+1][jj-1] == 'O') && (board[ii+2][jj-2] == 'S'))
-                        {
-                                return square;
-                        }
-                        if((board[ii-1][jj+1] == 'O') && (board[ii-2][jj+2] == 'S'))
-                        {
-                                return square;
-                        }
-		  }
-		}
-	}
-	return 0;
-}
 
 int comp_find_ss()
 {
