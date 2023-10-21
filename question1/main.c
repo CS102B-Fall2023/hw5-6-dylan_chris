@@ -5,7 +5,7 @@ void init_board (void);
 void draw_board (void);
 int number_players (void);
 int play_again (void);
-int square_valid (int);
+int open_square (int);
 int game_done (void);
 int find_sos (int, int, char);
 void two_player (void);
