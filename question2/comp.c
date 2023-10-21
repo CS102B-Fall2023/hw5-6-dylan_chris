@@ -4,14 +4,14 @@
 char board[50][50];
 int Player1, Player2, Computer, players, n;
 
-void comp_play()
+void computer_play()
 {
         do
         {
                 player_move(1);
                 if (!game_done())
                 {
-                        comp_move();
+                        computer_move();
                 }
         }while(!game_done());
 
@@ -33,7 +33,7 @@ int find_square()
         }
         return 0;
 }
-void comp_move()
+void computer_move()
 {
 
   int square;
@@ -43,14 +43,14 @@ void comp_move()
   do
   {
         draw_board();
-        if(comp_find_os())
+        if(computer_find_os())
         {
-                square = comp_find_os();
+                square = computer_find_os();
                 symbol = 'S';
         }
-        else if(comp_find_ss())
+        else if(computer_find_ss())
         {
-                square = comp_find_ss();
+                square = computer_find_ss();
                 symbol = 'O';
         }
         else
@@ -67,7 +67,7 @@ void comp_move()
 
    return;
 }
-int comp_find_os ()
+int computer_find_os ()
 {
         int square;
 
@@ -115,7 +115,7 @@ int comp_find_os ()
         }
         return 0;
 }
-int comp_find_ss()
+int computer_find_ss()
 {
         int square;
 
