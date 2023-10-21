@@ -11,8 +11,8 @@ int find_sos (int, int, char);
 void two_player (void);
 int find_square (void);
 void player_move(int);
-void comp_play(void);
-void comp_move(void);
+void computer_play(void);
+void computer_move(void);
 void winner (void);
 int comp_find_ss (void);
 
@@ -30,7 +30,7 @@ int main ()
 		if(numb_players()==1)
 		{
 			players=1;
-			comp_play();
+			computer_play();
 		}
 		else
 		{
