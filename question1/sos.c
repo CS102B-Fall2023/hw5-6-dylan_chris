@@ -342,9 +342,16 @@ void comp_move()
   int square;
   int row, col;
   char symbol;
-
-  do
-  {
+        for(row = 0; row<5; row++){
+                for(col = 0; col<5; col++){
+                if (board[row][col] == ' '){
+                board[row][col] = 'S';
+                break;
+                }
+                }
+        }
+ /* do{
+      
         draw_board();
 	if(comp_find_os())
 	{
@@ -367,7 +374,7 @@ void comp_move()
    	board[row][col] = symbol;
 	printf("I am putting a %c in %d square\n", symbol, square);
    }while(find_sos (square, 3, symbol));
-
+*/
    return;
 }
 
