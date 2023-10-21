@@ -33,7 +33,7 @@ void player_move(int player)
         do
         {
                 scanf("%d", &square);
-        }while (!square_valid(square));
+        }while (!open_square(square));
 
         row = (square-1)/n;
         col = (square-1)%n;
