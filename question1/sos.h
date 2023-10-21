@@ -5,7 +5,7 @@ void init_board (void);
 void draw_board (void);
 int number_players (void);
 int play_again (void);
-int square_valid (int);
+int open_square (int);
 int game_done (void);
 int find_sos (int, int, char);
 void two_player (void);
@@ -118,7 +118,7 @@ int game_done()
         return 1;
 }
 
-int square_valid (int square)
+int open_square (int square)
 {
    int row, col;
    
@@ -171,7 +171,7 @@ void player_move(int player)
 	do
 	{
 		scanf("%d", &square);
-	}while (!square_valid(square));
+	}while (!open_square(square));
 
 	row = (square-1)/5;
 	col = (square-1)%5;
@@ -379,7 +379,7 @@ int computer_find_ss()
                 {  
                    square = ((ii*5) +jj)+1;
 
-                   if(square_valid(square))
+                   if(open_square(square))
                    {
 
 		        if((board[ii][jj+1]=='S') && (board[ii][jj-1] == 'S'))
