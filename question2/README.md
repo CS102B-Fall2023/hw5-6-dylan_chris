@@ -8,5 +8,7 @@ Bonus (+10 for each):
 
 Compilation Steps:  
 
+make
+./main.out
 
 Output (sample run):  

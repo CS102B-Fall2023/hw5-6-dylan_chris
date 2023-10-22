@@ -1,0 +1,16 @@
+void init_board (void);
+void draw_board (void);
+int numb_players (void);
+int play_again (void);
+int open_square (int);
+int game_done (void);
+int find_sos (int, int, char);
+void two_player (void);
+int find_square (void);
+void player_move(int);
+void computer_play(void);
+void computer_move(void);
+void winner (void);
+void how_big(void);
+int computer_find_os (void);
+int computer_find_ss (void);
